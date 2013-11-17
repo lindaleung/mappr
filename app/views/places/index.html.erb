@@ -1,0 +1,15 @@
+<!-- this page will house the last place that the user submitted -->
+
+<h1>
+	Where the F am I?
+</h1>
+
+<div>
+	<% if @place.present? %>
+		Title: <%= @place.title %>
+		<br>
+		Address: <%= @place.address %>
+	<% else %>
+		<h2>Enter the first place, because we don't have any!</h2>
+	<% end %>
+</div>
