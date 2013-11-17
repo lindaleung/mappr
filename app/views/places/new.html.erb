@@ -1,0 +1,16 @@
+<h1>
+	Go to a new place
+</h1>
+
+<div>
+Give us an address
+
+<%= simple_form_for @place do |f| %>
+	<%= f.input :title %>
+	<%= f.input :address %>
+
+	<%= submit_tag 'I want to go to there' %>
+	
+<% end %>
+
+</div>
