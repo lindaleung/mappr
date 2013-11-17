@@ -9,6 +9,38 @@
 		Title: <%= @place.title %>
 		<br>
 		Address: <%= @place.address %>
+
+			<!-- will need to get our own API key; this only works on localhost -->
+	<script src="//maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyDzleZt1Cn-Ha1cn19cC8LOKVFueX_iYB4"
+            type="text/javascript"></script>
+
+	<script type="text/javascript">
+    
+	// jQuery version of the standard Google verison
+	// view-source:https://google-developers.appspot.com/maps/documentation/javascript/v2/examples/map-markers
+	$(function() {
+
+		$( window ).unload(function() {
+  			GUnload();
+		});
+
+
+		if (GBrowserIsCompatible()) {
+			var map = new GMap2(document.getElementById("map_canvas"));
+			map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+
+			var point = new GLatLng(37.4419, -122.1419);
+			map.addOverlay(new GMarker(point));
+		}	
+  	});
+    
+    // jQuery GUnload
+
+
+    </script>
+
+    <div id="map_canvas" style="width: 500px; height: 300px"></div>
+
 	<% else %>
 		<h2>Enter the first place, because we don't have any!</h2>
 	<% end %>
